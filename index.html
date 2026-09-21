@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <link rel="icon" href="data:," />
+    <title>distributed-web-llm (PubNub signaling)</title>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.36.0.js" defer></script>
+  </head>
+  <body>
+    <h1>distributed-web-llm — pipeline parallel over WebRTC</h1>
+
+    <h3>Tabs</h3>
+    <pre id="roster">discovering...</pre>
+
+    <h3>Chat (leader tab outputs here)</h3>
+    <pre id="out"></pre>
+    <input id="in" size="60" placeholder="message" />
+    <button id="send">send</button>
+
+    <h3>Engine</h3>
+    <pre id="status">booting...</pre>
+
+    <h3>Log</h3>
+    <pre id="log" style="white-space: pre-wrap"></pre>
+
+    <p>
+      Open in Chrome (WebGPU) on 2+ tabs or devices with same <code>?room=X</code>.
+      Weights: Qwen/Qwen2.5-1.5B-Instruct bf16, fetched per-layer via HTTP Range.
+    </p>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
